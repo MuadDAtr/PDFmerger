@@ -3,7 +3,8 @@ import sys
 import os
 
 merging = PyPDF2.PdfFileMerger()
+os.mkdir('new_pdfs')
 for file in os.listdir(os.curdir):
     if file.endswith(".pdf"):
         merging.append(file)
-    merging.write("MergedDocument.pdf")
+merging.write("new_pdfs/MergedDocument.pdf")
